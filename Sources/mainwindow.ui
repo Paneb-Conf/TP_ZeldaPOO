@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1060</width>
+    <height>713</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>rsfs10</family>
+    <italic>true</italic>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGraphicsView" name="maCarte">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>60</y>
+      <width>791</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>256</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>URW Chancery L</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="backgroundBrush">
+     <brush brushstyle="Dense4Pattern">
+      <color alpha="255">
+       <red>40</red>
+       <green>204</green>
+       <blue>64</blue>
+      </color>
+     </brush>
+    </property>
+    <property name="sceneRect">
+     <rectf>
+      <x>-200.000000000000000</x>
+      <y>-200.000000000000000</y>
+      <width>700.000000000000000</width>
+      <height>500.000000000000000</height>
+     </rectf>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="loadLevel1">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>30</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>URW Chancery L</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Charger niveau 1</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="loadLevel2">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>30</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>URW Chancery L</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Charger niveau 2</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="quitter">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>0</y>
+      <width>131</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>URW Chancery L</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Quitter</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="choixDiff">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>30</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>URW Chancery L</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="editable">
+     <bool>false</bool>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+    <item>
+     <property name="text">
+      <string>Difficulté facile</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Difficulté normale</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Difficulté dure</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Hero of Hyrule</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="InfoDiff">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>0</y>
+      <width>261</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>URW Chancery L</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Changer la difficulté mettra le jeu en pause
+ et nécessitera d'appuyer sur &quot;Pause&quot;.</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="InfoGroup">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>371</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>URW Chancery L</family>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <italic>true</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Zelda - M2C : IHM en C++ avec QT</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bouttonPause">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>30</y>
+      <width>87</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>URW Chancery L</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Pause</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="loadLevel3">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>30</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>URW Chancery L</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Charger niveau 3</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="commandes">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>620</y>
+      <width>261</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>URW Palladio L</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mouvement : Z,Q,S,D || Attaque : M&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="imageDiamant">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>70</y>
+      <width>58</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../build-untitled-Desktop-Debug/Images/BlueRupee_iconeTop.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="nbRubis">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="segmentStyle">
+     <enum>QLCDNumber::Outline</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="infoFleche">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>640</y>
+      <width>411</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>URW Palladio L</family>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Les flèches peuvent être utilisées pour changer la difficulté</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="coeur1Plein">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>60</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../build-Zelda_Beta-Desktop-Debug/Images/HeartContainerLoZ.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="coeur2Plein">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>60</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../build-Zelda_Beta-Desktop-Debug/Images/HeartContainerLoZ.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="coeur3Plein">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>60</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../build-Zelda_Beta-Desktop-Debug/Images/HeartContainerLoZ.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="coeurVide1">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>60</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../build-Zelda_Beta-Desktop-Debug/Images/coeurVide.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="coeurVide2">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>50</y>
+      <width>51</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../build-Zelda_Beta-Desktop-Debug/Images/coeurVide.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="coeurVide3">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>50</y>
+      <width>41</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../build-Zelda_Beta-Desktop-Debug/Images/coeurVide.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="logo">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>240</y>
+      <width>181</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../build-untitled-Desktop-Debug/Images/logo.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>110</y>
+      <width>491</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Bienvenue dans le Zelda de M2C !
+Voici quelques règles à connaitre :
+- Les escaliers pour mener au niveau 
+suivant ne seront activés qu'une fois 
+tous les rubis ramassés.
+-Lorsque notre princesse est touchée
+le fantôme de Link apparait pour 
+la protéger un court instant !
+-Les DarknutRed ont besoin de deux 
+coups pour mourir, les SwordMoblins un 
+et le grand fantôme 5 !
+-Les DarknutsRed peuvent faire tomber
+un coeur bonus pour le niveau(limite de 
+4,mais regen) et les SwordMoblin une 
+potion(regen de un coeur)
+-Une image de fin s'affiche une 
+fois le jeu fini.
+-Des ralentissements sont à prévoir
+ si présence de nombreux objets 
+dynamiques.</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="coeur4Plein">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>60</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../build-Zelda_Beta-Desktop-Debug/Images/HeartContainerLoZ.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="coeurVide4">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>50</y>
+      <width>41</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../build-Zelda_Beta-Desktop-Debug/Images/coeurVide.png</pixmap>
+    </property>
+   </widget>
+   <zorder>choixDiff</zorder>
+   <zorder>maCarte</zorder>
+   <zorder>loadLevel1</zorder>
+   <zorder>quitter</zorder>
+   <zorder>loadLevel2</zorder>
+   <zorder>InfoDiff</zorder>
+   <zorder>InfoGroup</zorder>
+   <zorder>bouttonPause</zorder>
+   <zorder>loadLevel3</zorder>
+   <zorder>commandes</zorder>
+   <zorder>imageDiamant</zorder>
+   <zorder>nbRubis</zorder>
+   <zorder>infoFleche</zorder>
+   <zorder>coeur1Plein</zorder>
+   <zorder>coeur2Plein</zorder>
+   <zorder>coeur3Plein</zorder>
+   <zorder>coeurVide1</zorder>
+   <zorder>coeurVide2</zorder>
+   <zorder>coeurVide3</zorder>
+   <zorder>logo</zorder>
+   <zorder>label</zorder>
+   <zorder>coeur4Plein</zorder>
+   <zorder>coeurVide4</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1060</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuOption_de_jeu">
+    <property name="title">
+     <string>Option de jeu</string>
+    </property>
+    <addaction name="actionCharger_une_partie"/>
+    <addaction name="actionSauvegarder"/>
+    <addaction name="actionQuitter"/>
+   </widget>
+   <addaction name="menuOption_de_jeu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <action name="actionCharger_une_partie">
+   <property name="text">
+    <string>Charger une partie...</string>
+   </property>
+  </action>
+  <action name="actionSauvegarder">
+   <property name="text">
+    <string>Sauvegarder</string>
+   </property>
+  </action>
+  <action name="actionQuitter">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>loadLevel1</tabstop>
+  <tabstop>loadLevel2</tabstop>
+  <tabstop>quitter</tabstop>
+  <tabstop>maCarte</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>loadLevel2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>monterNiveau2()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>290</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>415</x>
+     <y>331</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>quitter</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>789</x>
+     <y>48</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>415</x>
+     <y>331</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>loadLevel1</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>monterNiveau1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>60</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>415</x>
+     <y>331</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>choixDiff</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>choisirDifficulte(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>510</x>
+     <y>75</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>415</x>
+     <y>331</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bouttonPause</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>gererPause()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>623</x>
+     <y>83</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>412</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>loadLevel3</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>monterNiveau3()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>350</x>
+     <y>85</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>412</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>monterNiveau2()</slot>
+  <slot>monterNiveau1()</slot>
+  <slot>choisirDifficulte(int)</slot>
+  <slot>gererPause()</slot>
+  <slot>monterNiveau3()</slot>
+ </slots>
+</ui>

@@ -3,14 +3,10 @@ TP_ZeldaPOO
 
 Rendu concernant IHM en C++ avec QTCreator
 
-Liste des dossiers et fichier :
-Racine:
-	Affichage normal
+Liste des dossiers :
 	Images
-	Release
 	Sources
-	README
-	
+	Affichage normal
 
 Compilation et lancement :
 	-Générez un nouveau projet sur QTCreator de type Application, sous type Qt Widgets Application. Nommez-le et placez-le comme vous voulez.
