@@ -199,18 +199,41 @@ void Creatures::advance(int phase){
         if(this->getAlive()==DEAD)
         {
             this->hide();
+
+            /* Gestion de l'apparition d'un coeur */
             if(this->getCoeur()==HEART){
                 QList <QGraphicsItem*> liste = this->scene()->items();
                 for(int i = 0; i<liste.size();i++)
                 {
-                    if(liste.at(i)->type()==TYPE_MAP_ITEM_COEUR)
+                    if(liste.at(i)->type()==TYPE_MAP_ITEM_COEUR &&(!liste.at(i)->isVisible()))
                     {
                         liste.at(i)->setPos(this->pos());
                         liste.at(i)->show();
                         Coeur* p = (Coeur*) &(this->scene()->items().at(i));
                         p->setUtilise(HEART_USED);
+                        break;
 
                     }
+
+                }
+
+            }
+            if(this->getPotion()==POTION){
+
+                QList <QGraphicsItem*> liste = this->scene()->items();
+                for(int i = 0; i<liste.size();i++)
+                {
+                    if((liste.at(i)->type()==TYPE_MAP_ITEM_POTION)&&(!liste.at(i)->isVisible()))
+                    {
+
+                        liste.at(i)->setPos(this->pos());
+                        liste.at(i)->show();
+                        Potion* p = (Potion*) &(this->scene()->items().at(i));
+                        p->setUtilise(POTION_USED);
+                        break;
+
+                    }
+
                 }
 
             }
@@ -342,4 +365,11 @@ int Creatures::getCoeur(){
 
 void Creatures::setCoeur(int p){
     this->_coeur = p;
+}
+int Creatures::getPotion(){
+    return this->_potion;
+}
+
+void Creatures::setPotion(int p){
+    this->_potion = p;
 }

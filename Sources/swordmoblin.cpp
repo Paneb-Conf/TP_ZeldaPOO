@@ -12,6 +12,7 @@ SwordMoblin::SwordMoblin(QGraphicsScene* scene){
     this->setPixmap(this->getImage());
     this->setHealth(HEALTH_SWORDMOBLIN);
     this->setCoeur(NO_HEART);
+    this->setPotion(NO_POTION);
     this->setAlive(ALIVE);
     this->setTypeMov(NEW_MOVE);
     scene->addItem(this);

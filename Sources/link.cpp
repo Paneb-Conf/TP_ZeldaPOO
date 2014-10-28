@@ -173,6 +173,19 @@ int Link::mouvementOk(){
                 liste.at(i)->hide();
             }
         }
+        else if(liste.at(i)->type() == TYPE_MAP_ITEM_POTION){
+            if(liste.at(i)->isVisible())
+            {
+                if(this->getCoeur()!=HEART){
+                    if(this->getHealth()<THREE_HEART)
+                        this->setHealth(this->getHealth()+POTION);}
+                else{
+                    if(this->getHealth()<HEALTH_LINK_PLUS)
+                        this->setHealth(this->getHealth()+POTION);}
+
+                liste.at(i)->hide();
+            }
+        }
 
     }
     return MOUVEMENTOK;

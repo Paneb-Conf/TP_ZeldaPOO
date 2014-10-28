@@ -202,7 +202,7 @@ void GestionFenetre::setLvL(QGraphicsScene* maScene, int niveau){
     /* Ces paramètres seront mis à jour selon le niveau voulu afin
      * d'être utilisés pour générer notre niveau dans une même fonction.
      */
-    int pSwordMoblin,pDarknutRed,pRubis,pLampe,pGiantGhini, pEscalier, pCoeur;
+    int pSwordMoblin,pDarknutRed,pRubis,pLampe,pGiantGhini, pEscalier, pCoeur, pPotion;
 
     /* Notre switch pour mettre à jour nos valeurs selon le niveau */
     switch(niveau){
@@ -214,6 +214,7 @@ void GestionFenetre::setLvL(QGraphicsScene* maScene, int niveau){
         pGiantGhini = GIANTGHINI_NIVEAU1;
         pEscalier = ESCALIER_NIVEAU1;
         pCoeur = COEUR_NIVEAU1;
+        pPotion = POTION_NIVEAU1;
         this->setTrich(PAS_TRICHE);
         break;
     case NIVEAU2:
@@ -224,6 +225,7 @@ void GestionFenetre::setLvL(QGraphicsScene* maScene, int niveau){
         pGiantGhini = GIANTGHINI_NIVEAU2;
         pEscalier = ESCALIER_NIVEAU2;
         pCoeur = COEUR_NIVEAU2;
+        pPotion = POTION_NIVEAU2;
         break;
     case NIVEAU3:
         pSwordMoblin = SWORDMOBLIN_NIVEAU3;
@@ -233,6 +235,7 @@ void GestionFenetre::setLvL(QGraphicsScene* maScene, int niveau){
         pGiantGhini = GIANTGHINI_NIVEAU3;
         pEscalier = ESCALIER_NIVEAU3;
         pCoeur = COEUR_NIVEAU3;
+        pPotion = POTION_NIVEAU3;
         break;
     }
 
@@ -314,6 +317,33 @@ void GestionFenetre::setLvL(QGraphicsScene* maScene, int niveau){
             }while(doublon);
             tab[j]=i;
             maListeDarknutRed.at(i)->setCoeur(HEART);
+        }
+    }
+    if(pPotion){
+        int tab[maListeSwordMoblin.size()];
+        int i;
+        for(int j = 0; j<pPotion;j++)
+        {
+            /* On ajoute des coeurs sur la scène et on met à jour l'indicateur
+             * des monstres qui en font apparaitre un ou pas. La variable maPotion
+             * n'est pas utilisé directement ici car on ne fait que l'instancier.
+             * La condition n'est là que pour enlever un warning */
+            Potion* maPotion = new Potion(maScene);
+            if(maPotion)
+            {}
+
+            int doublon;
+            do{
+                doublon = 0;
+                i = rand()%maListeSwordMoblin.size();
+                for(int k =0; k<maListeSwordMoblin.size();k++)
+                    if(tab[k]==i)
+                        doublon = 1;
+
+            }while(doublon);
+            tab[j]=i;
+            maListeSwordMoblin.at(i)->setPotion(POTION);
+
         }
     }
 

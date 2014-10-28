@@ -10,6 +10,7 @@ DarknutRed::DarknutRed(QGraphicsScene* scene){
     this->setHealth(HEALTH_DARKNUTRED);
     this->setAlive(ALIVE);
     this->setCoeur(NO_HEART);
+    this->setPotion(NO_POTION);
     this->setTypeMov(NEW_MOVE);
     this->setImage((QCoreApplication::applicationDirPath()).toStdString()+"/Images/DarknutRed_icone.png");
     this->setPixmap(this->getImage());

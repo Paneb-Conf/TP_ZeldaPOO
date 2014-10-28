@@ -2,6 +2,7 @@
 #define CREATURES_H
 /* On souhaite afficher les classes filles des créatures, on dérive donc de notre classe adéquate*/
 #include "coeur.h"
+#include "potion.h"
 #include "elementgraphique.h"
 
 class Creatures: public ElementGraphique
@@ -20,6 +21,7 @@ public:
     int getDamage();
     bool getAlive();
     int getCoeur();
+    int getPotion();
 
     /* Setters */
     void setHealth(int);
@@ -27,6 +29,7 @@ public:
     void setAlive(bool);
     void updateHealth();
     void setCoeur(int);
+    void setPotion(int);
 
 
 
@@ -56,6 +59,7 @@ private:
     int _move;
     int _nbDecalage;
     int _coeur;
+    int _potion;
 
 };
 
