@@ -45,66 +45,119 @@ void Creatures::toucherParLeJoueur(){
     liste = this->collidingItems();
     int mesCollision = liste.size();
 
+    /* Gestion de l'orientation de l'attaque */
     for(int i =0; i<mesCollision;i++)
     {
+        /* Le héros doit être en mode attaque */
         if(liste.at(i)->type()==LINK_ATTACK)
           {
-
-            this->updateHealth();
-            int provenanceAttaqueX, provenanceAttaqueY;
-            provenanceAttaqueX = this->x()-liste.at(i)->x();
-            provenanceAttaqueY = this->y()-liste.at(i)->y();
-            if(provenanceAttaqueX>0)
-            {
-                this->setCap(AXE_RIGHT);
-                 for(int jump = 0;jump<JUMP;jump++)
-                     this->moveRight();
-                 if(!this->mouvementOk())
+            Link* leHeros = (Link*)liste.at(i);
+            /* On initialise la validité de l'attaque en non valide */
+            int attaqueOK = ATTACK_FAIL;
+            /* On récupère l'axe de notre monstre. La méthodologie ne
+             * sera détaillé que pour l'axe vers la gauche.*/
+            switch(this->getCap()){
+            case AXE_LEFT:
+                /* Si le héros est opposé à notre monstre l'attaque est directement validée */
+                if(leHeros->getCap()==AXE_RIGHT)
+                    attaqueOK = ATTACK_OK;
+                /* Si il est en biais on compare les coordonnées afin de savoir si le monstre arrive
+                 * sur l'épée ou si il s'en éloigne. On lui inflige des dégats alors */
+                else if(leHeros->getCap()==AXE_BOT || leHeros->getCap()==AXE_TOP)
+                {
+                    if(leHeros->x()<this->x())
+                        attaqueOK = ATTACK_OK;
+                }
+                break;
+            case AXE_BOT:
+                if(leHeros->getCap()==AXE_TOP)
+                    attaqueOK = ATTACK_OK;
+                /* Si il est en biais on compare les coordonnées afin de savoir si le monstre arrive
+                 * sur l'épée ou si il s'en éloigne. On lui inflige des dégats alors */
+                else if(leHeros->getCap()==AXE_RIGHT || leHeros->getCap()==AXE_LEFT)
+                {
+                    if(leHeros->y()>this->y())
+                        attaqueOK = ATTACK_OK;
+                }
+                break;
+            case AXE_RIGHT:
+                if((leHeros->getCap()==AXE_LEFT))
+                       attaqueOK = ATTACK_OK;
+                /* Si il est en biais on compare les coordonnées afin de savoir si le monstre arrive
+                 * sur l'épée ou si il s'en éloigne. On lui inflige des dégats alors */
+                else if(leHeros->getCap()==AXE_BOT || leHeros->getCap()==AXE_TOP)
+                {
+                    if(leHeros->x()>this->x())
+                        attaqueOK = ATTACK_OK;
+                }
+                break;
+             case AXE_TOP:
+                 if(leHeros->getCap()==AXE_BOT)
+                        attaqueOK = ATTACK_OK;
+                 else if(leHeros->getCap()==AXE_RIGHT || leHeros->getCap()==AXE_LEFT)
                  {
-                     this->moveLeft();
-                     for(int jump = 0;jump<JUMP;jump++)
-                         this->moveLeft();
-                    }
+                     if(leHeros->y()<this->y())
+                         attaqueOK = ATTACK_OK;
+                 }
+                 break;
             }
-            else if(provenanceAttaqueX<0)
-              {
-                this->setCap(AXE_LEFT);
-                 for(int jump = 0;jump<JUMP;jump++)
-                     this->moveLeft();
-                 if(!this->mouvementOk())
-                 {
-                     this->moveRight();
+            if(attaqueOK==ATTACK_OK){
+                this->updateHealth();
+                int provenanceAttaqueX, provenanceAttaqueY;
+                provenanceAttaqueX = this->x()-liste.at(i)->x();
+                provenanceAttaqueY = this->y()-liste.at(i)->y();
+                if(provenanceAttaqueX>0)
+                {
+                    this->setCap(AXE_RIGHT);
                      for(int jump = 0;jump<JUMP;jump++)
                          this->moveRight();
-                    }
-            }
-            if(provenanceAttaqueY>0)
-            {
-                this->setCap(AXE_TOP);
-                 for(int jump = 0;jump<JUMP;jump++)
-                     this->moveTop();
-                 if(!this->mouvementOk())
-                 {
-                     this->moveBot();
+                     if(!this->mouvementOk())
+                     {
+                         this->moveLeft();
+                         for(int jump = 0;jump<JUMP;jump++)
+                             this->moveLeft();
+                        }
+                }
+                else if(provenanceAttaqueX<0)
+                  {
+                    this->setCap(AXE_LEFT);
                      for(int jump = 0;jump<JUMP;jump++)
-                         this->moveBot();
-                    }
-            }
-
-            else
-            {    this->setCap(AXE_BOT);
-                 for(int jump = 0;jump<JUMP;jump++)
-                     this->moveBot();
-                 if(!this->mouvementOk())
-                 {
-                     this->moveTop();
+                         this->moveLeft();
+                     if(!this->mouvementOk())
+                     {
+                         this->moveRight();
+                         for(int jump = 0;jump<JUMP;jump++)
+                             this->moveRight();
+                        }
+                }
+                if(provenanceAttaqueY>0)
+                {
+                    this->setCap(AXE_TOP);
                      for(int jump = 0;jump<JUMP;jump++)
                          this->moveTop();
-                    }
+                     if(!this->mouvementOk())
+                     {
+                         this->moveBot();
+                         for(int jump = 0;jump<JUMP;jump++)
+                             this->moveBot();
+                        }
+                }
+
+                else
+                {    this->setCap(AXE_BOT);
+                     for(int jump = 0;jump<JUMP;jump++)
+                         this->moveBot();
+                     if(!this->mouvementOk())
+                     {
+                         this->moveTop();
+                         for(int jump = 0;jump<JUMP;jump++)
+                             this->moveTop();
+                        }
+
+                }
+
 
             }
-
-
         }
     }
 
@@ -159,7 +212,6 @@ void Creatures::advance(int phase){
 
                     }
                 }
-
 
             }
 

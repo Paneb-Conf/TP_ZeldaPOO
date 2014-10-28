@@ -83,6 +83,8 @@
 #define LINK_BASE   0
 #define LINK_DAMAGE 1
 #define LINK_SAFE 0
+#define ATTACK_OK 1
+#define ATTACK_FAIL 0
 
 #define COUP    1
 #define ALIVE   1

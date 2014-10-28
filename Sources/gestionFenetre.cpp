@@ -295,7 +295,14 @@ void GestionFenetre::setLvL(QGraphicsScene* maScene, int niveau){
         int i;
         for(int j = 0; j<pCoeur;j++)
         {
+            /* On ajoute des coeurs sur la scène et on met à jour l'indicateur
+             * des monstres qui en font apparaitre un ou pas. La variable coeur
+             * n'est pas utilisé directement ici car on ne fait que l'instancier.
+             * La condition n'est là que pour enlever un warning */
             Coeur* unCoeur = new Coeur(maScene);
+            if(unCoeur)
+            {}
+
             int doublon;
             do{
                 doublon = 0;
