@@ -23,6 +23,8 @@ Ctrl+R pour lancer l'application. Le jeu considère comme de la triche de charge
 améliorer encore).
 Les escaliers ne s'activent que si les rubis sont tous ramassés.
 
+29.10.2014 :
+Mis en ligne version Martin T. Ajout des flèches + mise à jour paramétre cap initial de notre héros.
 28.10.2014 :
 Mis en ligne version Martin T. avec gestion des attaques par leur direction (opposées + biais)
 27.10.2014 :

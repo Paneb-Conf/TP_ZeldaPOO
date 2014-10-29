@@ -21,7 +21,7 @@ Link::Link(QGraphicsScene* maScene){
     this->setImage((QCoreApplication::applicationDirPath()).toStdString()+"/Images/Zelda_bot1.png");
     this->setPixmap(this->getImage());
     this->setZValue(Z_HEROS);
-
+    this->setCap(AXE_BOT);
     maScene->addItem(this);
 }
 

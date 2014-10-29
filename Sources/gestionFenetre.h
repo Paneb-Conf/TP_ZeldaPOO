@@ -18,6 +18,7 @@
 #include "dalle1.h"
 #include "lampepiedestal.h"
 #include "coeur.h"
+#include "fleche.h"
 #include "link.h"
 class GestionFenetre : public QObject
 {

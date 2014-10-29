@@ -39,6 +39,22 @@ int Creatures::mouvementOk(){
     return MOUVEMENTOK;
 }
 
+void Creatures::toucherParUneFleche(){
+    QList<QGraphicsItem *> liste = collidingItems() ;
+    liste.clear();
+    liste = this->collidingItems();
+    int mesCollision = liste.size();
+    for(int i =0; i<mesCollision;i++)
+    {
+        /* Le héros doit être en mode attaque */
+        if(liste.at(i)->type()==TYPE_HEROS_FLECHE)
+           {
+            this->updateHealth();
+            liste.at(i)->~QGraphicsItem();
+        }
+          }
+}
+
 void Creatures::toucherParLeJoueur(){
     QList<QGraphicsItem *> liste = collidingItems() ;
     liste.clear();
@@ -196,6 +212,7 @@ void Creatures::advance(int phase){
         }
 
         this->toucherParLeJoueur();
+        this->toucherParUneFleche();
         if(this->getAlive()==DEAD)
         {
             this->hide();

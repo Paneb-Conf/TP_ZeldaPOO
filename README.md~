@@ -23,7 +23,8 @@ Ctrl+R pour lancer l'application. Le jeu considère comme de la triche de charge
 améliorer encore).
 Les escaliers ne s'activent que si les rubis sont tous ramassés.
 
-
+28.10.2014 :
+Mis en ligne version Martin T. avec gestion des attaques par leur direction (opposées + biais)
 27.10.2014 :
 Mis en ligne version Martin T.
 Coeur bonus dispo lvl 2 et 3 (respectivement 1 et 2). La vie passe à 4 + fullregen.
@@ -33,4 +34,5 @@ En cours :
 	-ajout des potions sur les SwordMoblins
 	-<mise en place de la continuité du coeur Bonus ?>
 	-<ajout d'une attaque spéciale ?>
+
 

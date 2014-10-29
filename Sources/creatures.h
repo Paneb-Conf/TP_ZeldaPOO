@@ -48,6 +48,7 @@ public:
     int getNbDecalage();
     void uneCollision();
     void toucherParLeJoueur();
+    void toucherParUneFleche();
     int mouvementOk();
 
 

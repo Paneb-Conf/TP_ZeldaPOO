@@ -239,14 +239,33 @@ if(this->game->_jeuLance==JEU_EN_COURS){
                     }
 
                 }
-                /* A decommenter pour se rajouter une vie en appuyant sur P */
+                else if(event->key()==Qt::Key_O)
+                 {
+                    int flechePresente = ARROW_NULL;
+                    for(int i = 0;i<this->game->getScene()->items().size();i++)
+                      {
+                        if(this->game->getScene()->items().at(i)->type()==TYPE_HEROS_FLECHE)
+                            flechePresente = flechePresente+1;
+                    }
 
+                    if(flechePresente<ARROW_MAX)
+                        {
+                           Fleche* uneFleche = NULL;
+                            uneFleche = new Fleche(this->game->getScene(),this->game->getLeJoueur()->pos(),this->game->getLeJoueur()->getCap());
+                        /*Inutile, juste pour enlever un warning */
+                            if(uneFleche){}
+                    }
+
+                }
+                /* A decommenter pour se rajouter une vie en appuyant sur P */
+/*
                 else if(event->key()==Qt::Key_P)
                  {
                             this->game->getLeJoueur()->setHealth(this->game->getLeJoueur()->getHealth()+1);
 
 
                 }
+                */
             }
             else if(this->game->getLeJoueur()->getHealth()<=DEAD)
                 this->game->getLeJoueur()->setImageDead();

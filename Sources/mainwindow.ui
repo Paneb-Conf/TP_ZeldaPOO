@@ -272,7 +272,7 @@
      <rect>
       <x>0</x>
       <y>620</y>
-      <width>261</width>
+      <width>541</width>
       <height>51</height>
      </rect>
     </property>
@@ -282,7 +282,7 @@
      </font>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mouvement : Z,Q,S,D || Attaque : M&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mouvement : Z,Q,S,D || Attaque : M (épée) ; O (flèche, 2 max)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="imageDiamant">
@@ -317,8 +317,8 @@
    <widget class="QLabel" name="infoFleche">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>640</y>
+      <x>700</x>
+      <y>630</y>
       <width>411</width>
       <height>16</height>
      </rect>
