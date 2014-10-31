@@ -31,7 +31,7 @@ Les messages d'erreur indiquant les ressources manquantes (et le dossier où ell
 Il suffit de télécharger le contenu du dossier <b>00_Release_Windows</b>, qui contient tous les fichiers nécessaire à bonne exécution de l'application (.dll). Il suffit ensuite de double cliquer sur Zelda_Windows.exe pour que le jeu se lance (se référer au dossier en ligne <u>Affichage normal</u> pour savoir si toutes les ressources ont bien été trouvées.<br>
 Note pour Windows : les sources disponibles en ligne refuseront de se compiler, en raison de deux lignes de code ou la taille de deux tableaux est alloués en fonction d'autres variables entière. Pour la release sous Windows le code source a donc été modifié afin d'intégrer des tableaux compatibles. Cependant la manière dont est allouée la taille sous Ubuntu étant plus soignée, c'est ce code là qui est en ligne (et qui ne compilera donc pas sous Windows mais sur Ubuntu oui, OS X n'ayant pas été testé je n'en sais rien).
 
-<h3>Sous Ubutun</h3>
+<h3>Sous Ubuntu</h3>
 Si la release disponible dans le dossier <b>00_build-Zelda_Beta-Desktop-Release_Ubuntu x64</b> fonctionne sous votre machine, tant mieux. Le cas contraire, voici comment procéder en repassant par QtCreator et les fichiers sources originaux :<br>
 	-Générez un nouveau projet sur QTCreator de type Application, de sous type Qt Widgets Application. Nommez-le et placez-le comme vous voulez.<br>
 -Copiez ensuite dans ce dossier tout le contenu du dossier sources (on vous demandera d'écraser le main et le ui, dites oui).<br> 
