@@ -45,8 +45,12 @@ dossier image. Des messages d'erreurs s'afficheront si les ressources ne sont pa
 Commande : Z,Q,S,D (les déplacement en diagonales sont sur A,E,W,C). Attaque épée : M, Attaque flèche : O.
  Le jeu considère comme de la triche de charger directement les niveaux 2 et 3. Pour gagner il faut commencer du niveau un.<br>
  Prendre tous les rubis activent les escaliers. Au dernier niveau ils ne servent pour l'instant à rien. <br>
- Les déplacements des créatures sont totalement aléatoires et ne ciblent pas spécifiquement le joueur.<br>
  Le nombre de flèche est limité à 2 (elles font autant de dégât qu'un coup d'épée).<br>
+ Les DarknutRed peuvent laisser tomber un coeur bonus, qui fera monter votre nombre de coeur à 4 ainsi que régénera totalement votre santé.<br>
+ Les SwordMoblins peuvent laisser tomber une potion qui vous restaurera un coeur. <br>
+ Il est impossible pour les créatures ou les flèches de passer à travers les lampes. Les escaliers et les rubis ont par contre leur collision de désactivée.<br>
+ Deux fins sont disponibles en fonction de votre manière de jouer aux jeux vidéos...<br>
+ Les déplacements des créatures sont totalement aléatoires et ne ciblent pas spécifiquement le joueur.<br>
  En raison de la conception même du jeu (double timer, un sur les créature l'autre sur Zelda), il est possible que la mise à jour des animations, notamment sur l'icone fantôme de Link soit un peu décalé.<br>
  Si le jeu semble se comporter de manière étrange (changement de difficulté liée à l'appuis sur touche, dépause-pause succéssive, etc) l'appui sur le bouton pause permet de remettre à plat le système de gestion de la fenêtre.
  
