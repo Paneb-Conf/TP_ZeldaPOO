@@ -23,7 +23,7 @@ Contenu du Readme :
 <li>Historique des mises en ligne</li>
 </ol>
 <h1>1. Instructions de lancement</h1>
-<h2>DANS TOUS LES CAS LE DOSSIER IMAGE DOIT SE TROUVER A L'ENROIT OU S'EXECUTE L'APPLICATION</h2>
+<h2>DANS TOUS LES CAS LE DOSSIER IMAGE DOIT SE TROUVER A L'ENDROIT OU S'EXECUTE L'APPLICATION</h2>
 Par exemple sous Windows le dossier Images doit être au même niveau que Zelda_Windows.exe, platforms, etc...
 Les messages d'erreur indiquant les ressources manquantes (et le dossier où elles devraient être) ne sont disponibles que par lancement à la console.
 
